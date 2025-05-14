@@ -45,7 +45,9 @@
         </div>
         <div class="navigation-controls">
         <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":haze:dokkaHtmlPartial/androidMain">android</button>
                 <button class="platform-tag platform-selector common-like" data-active="" data-filter=":haze:dokkaHtmlPartial/commonMain">common</button>
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":haze:dokkaHtmlPartial/skikoMain">skiko</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
                 <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
@@ -54,11 +56,25 @@
                             <i class="ui-kit-icon ui-kit-icon_cross"></i>
                         </button>
                     </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":haze:dokkaHtmlPartial/androidMain" data-filter=":haze:dokkaHtmlPartial/androidMain">
+                                <span class="checkbox--icon"></span>
+                                android
+                            </label>
+                        </li>
                         <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
                             <label class="checkbox">
                                 <input type="checkbox" class="checkbox--input" id=":haze:dokkaHtmlPartial/commonMain" data-filter=":haze:dokkaHtmlPartial/commonMain">
                                 <span class="checkbox--icon"></span>
                                 common
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":haze:dokkaHtmlPartial/skikoMain" data-filter=":haze:dokkaHtmlPartial/skikoMain">
+                                <span class="checkbox--icon"></span>
+                                skiko
                             </label>
                         </li>
                 </ul>
@@ -94,24 +110,24 @@
   <div class="breadcrumbs"><a href="../../index.html">haze</a><span class="delimiter">/</span><a href="../index.html">dev.chrisbanes.haze</a><span class="delimiter">/</span><span class="current">HazeEffectNode</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Haze</span><wbr><span>Effect</span><wbr><span><span>Node</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":haze:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">HazeEffectNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">var </span>state<span class="token operator">: </span><a href="../-haze-state/index.html">HazeState</a><span class="token punctuation">, </span></span><span class="parameter ">style<span class="token operator">: </span><a href="../-haze-style/index.html">HazeStyle</a><span class="token operator"> = </span>HazeStyle.Unspecified<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>block<span class="token operator">: </span><a href="../-haze-effect-scope/index.html">HazeEffectScope</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span> : <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier.Node.html">Modifier.Node</a>, <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/node/CompositionLocalConsumerModifierNode.html">CompositionLocalConsumerModifierNode</a>, <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/node/GlobalPositionAwareModifierNode.html">GlobalPositionAwareModifierNode</a>, <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/node/LayoutAwareModifierNode.html">LayoutAwareModifierNode</a>, <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/node/ObserverModifierNode.html">ObserverModifierNode</a>, <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/node/DrawModifierNode.html">DrawModifierNode</a>, <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/node/TraversableNode.html">TraversableNode</a>, <a href="../-haze-effect-scope/index.html">HazeEffectScope</a></div><p class="paragraph">The <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier.Node.html">Modifier.Node</a> implementation used by <a href="../haze-effect.html">Modifier.hazeEffect</a>.</p><p class="paragraph">This is public API in order to aid custom extensible modifiers, <i>but</i> we reserve the right to be able to change the API in the future, hence why it is marked as experimental forever.</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":haze:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">HazeEffectNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">var </span>state<span class="token operator">: </span><a href="../-haze-state/index.html">HazeState</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">style<span class="token operator">: </span><a href="../-haze-style/index.html">HazeStyle</a><span class="token operator"> = </span>HazeStyle.Unspecified<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>block<span class="token operator">: </span><a href="../-haze-effect-scope/index.html">HazeEffectScope</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span> : <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier.Node.html">Modifier.Node</a>, <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/node/CompositionLocalConsumerModifierNode.html">CompositionLocalConsumerModifierNode</a>, <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/node/GlobalPositionAwareModifierNode.html">GlobalPositionAwareModifierNode</a>, <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/node/LayoutAwareModifierNode.html">LayoutAwareModifierNode</a>, <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/node/ObserverModifierNode.html">ObserverModifierNode</a>, <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/node/DrawModifierNode.html">DrawModifierNode</a>, <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/node/TraversableNode.html">TraversableNode</a>, <a href="../-haze-effect-scope/index.html">HazeEffectScope</a></div><p class="paragraph">The <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier.Node.html">Modifier.Node</a> implementation used by <a href="../haze-effect.html">Modifier.hazeEffect</a>.</p><p class="paragraph">This is public API in order to aid custom extensible modifiers, <i>but</i> we reserve the right to be able to change the API in the future, hence why it is marked as experimental forever.</p></div></div>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION,EXTENSION_PROPERTY,EXTENSION_FUNCTION">Members &amp; Extensions</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="">Constructors</h2>
-        <div class="table"><a data-name="726922348%2FConstructors%2F-1073587601" anchor-label="HazeEffectNode" id="726922348%2FConstructors%2F-1073587601" data-filterable-set=":haze:dokkaHtmlPartial/commonMain"></a>
+        <div class="table"><a data-name="-532253451%2FConstructors%2F-1073587601" anchor-label="HazeEffectNode" id="-532253451%2FConstructors%2F-1073587601" data-filterable-set=":haze:dokkaHtmlPartial/commonMain"></a>
           <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":haze:dokkaHtmlPartial/commonMain" data-filterable-set=":haze:dokkaHtmlPartial/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-haze-effect-node.html"><span>Haze</span><wbr><span>Effect</span><wbr><span><span>Node</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="726922348%2FConstructors%2F-1073587601"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-532253451%2FConstructors%2F-1073587601"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":haze:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">state<span class="token operator">: </span><a href="../-haze-state/index.html">HazeState</a><span class="token punctuation">, </span></span><span class="parameter ">style<span class="token operator">: </span><a href="../-haze-style/index.html">HazeStyle</a><span class="token operator"> = </span>HazeStyle.Unspecified<span class="token punctuation">, </span></span><span class="parameter ">block<span class="token operator">: </span><a href="../-haze-effect-scope/index.html">HazeEffectScope</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":haze:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">state<span class="token operator">: </span><a href="../-haze-state/index.html">HazeState</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">style<span class="token operator">: </span><a href="../-haze-style/index.html">HazeStyle</a><span class="token operator"> = </span>HazeStyle.Unspecified<span class="token punctuation">, </span></span><span class="parameter ">block<span class="token operator">: </span><a href="../-haze-effect-scope/index.html">HazeEffectScope</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -195,6 +211,21 @@
               </div>
             </div>
           </div>
+<a data-name="461261552%2FProperties%2F-1073587601" anchor-label="blurredEdgeTreatment" id="461261552%2FProperties%2F-1073587601" data-filterable-set=":haze:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":haze:dokkaHtmlPartial/commonMain" data-filterable-set=":haze:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="blurred-edge-treatment.html"><span>blurred</span><wbr><span>Edge</span><wbr><span><span>Treatment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="461261552%2FProperties%2F-1073587601"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":haze:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">var </span><a href="blurred-edge-treatment.html">blurredEdgeTreatment</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/draw/BlurredEdgeTreatment.html">BlurredEdgeTreatment</a></div><div class="brief "><p class="paragraph">The <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/draw/BlurredEdgeTreatment.html">BlurredEdgeTreatment</a> to use when blurring content.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="724006872%2FProperties%2F-1073587601" anchor-label="canDrawArea" id="724006872%2FProperties%2F-1073587601" data-filterable-set=":haze:dokkaHtmlPartial/commonMain"></a>
           <div class="table-row" data-filterable-current=":haze:dokkaHtmlPartial/commonMain" data-filterable-set=":haze:dokkaHtmlPartial/commonMain">
             <div class="main-subrow keyValue ">
@@ -221,6 +252,21 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":haze:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-haze-source-node/index.html#114721937%2FProperties%2F-1073587601">coroutineScope</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2021124534%2FProperties%2F-1073587601" anchor-label="drawContentBehind" id="-2021124534%2FProperties%2F-1073587601" data-filterable-set=":haze:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":haze:dokkaHtmlPartial/commonMain" data-filterable-set=":haze:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="draw-content-behind.html"><span>draw</span><wbr><span>Content</span><wbr><span><span>Behind</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2021124534%2FProperties%2F-1073587601"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":haze:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">var </span><a href="draw-content-behind.html">drawContentBehind</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Whether to draw the content behind the blurred effect for foreground blurring. This is sometimes useful when you're using a mask or progressive effect.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -355,7 +401,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":haze:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">var </span><a href="state.html">state</a><span class="token operator">: </span><a href="../-haze-state/index.html">HazeState</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":haze:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">var </span><a href="state.html">state</a><span class="token operator">: </span><a href="../-haze-state/index.html">HazeState</a><span class="token operator">?</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -424,6 +470,23 @@
               </div>
             </div>
           </div>
+<a data-name="2052769072%2FFunctions%2F163962504" anchor-label="getWindowId" id="2052769072%2FFunctions%2F163962504" data-filterable-set=":haze:dokkaHtmlPartial/androidMain,:haze:dokkaHtmlPartial/skikoMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":haze:dokkaHtmlPartial/androidMain,:haze:dokkaHtmlPartial/skikoMain" data-filterable-set=":haze:dokkaHtmlPartial/androidMain,:haze:dokkaHtmlPartial/skikoMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../get-window-id.html"><span>get</span><wbr><span>Window</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2052769072%2FFunctions%2F163962504"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":haze:dokkaHtmlPartial/androidMain" data-filterable-set=":haze:dokkaHtmlPartial/androidMain" data-active="" data-toggle=":haze:dokkaHtmlPartial/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":haze:dokkaHtmlPartial/skikoMain" data-filterable-set=":haze:dokkaHtmlPartial/skikoMain" data-toggle=":haze:dokkaHtmlPartial/skikoMain">skiko</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":haze:dokkaHtmlPartial/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/node/CompositionLocalConsumerModifierNode.html">CompositionLocalConsumerModifierNode</a><span class="token punctuation">.</span><a href="../get-window-id.html"><span class="token function">getWindowId</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></div></div><div class="content sourceset-dependent-content" data-togglable=":haze:dokkaHtmlPartial/skikoMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/node/CompositionLocalConsumerModifierNode.html">CompositionLocalConsumerModifierNode</a><span class="token punctuation">.</span><a href="../get-window-id.html"><span class="token function">getWindowId</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="811544541%2FFunctions%2F-1073587601" anchor-label="onAttach" id="811544541%2FFunctions%2F-1073587601" data-filterable-set=":haze:dokkaHtmlPartial/commonMain"></a>
           <div class="table-row" data-filterable-current=":haze:dokkaHtmlPartial/commonMain" data-filterable-set=":haze:dokkaHtmlPartial/commonMain">
             <div class="main-subrow keyValue ">
@@ -435,6 +498,21 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":haze:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="on-attach.html"><span class="token function">onAttach</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="913801483%2FFunctions%2F-1073587601" anchor-label="onDensityChange" id="913801483%2FFunctions%2F-1073587601" data-filterable-set=":haze:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":haze:dokkaHtmlPartial/commonMain" data-filterable-set=":haze:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-haze-source-node/index.html#913801483%2FFunctions%2F-1073587601"><span>on</span><wbr><span>Density</span><wbr><span><span>Change</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="913801483%2FFunctions%2F-1073587601"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":haze:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-haze-source-node/index.html#913801483%2FFunctions%2F-1073587601"><span class="token function">onDensityChange</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -465,6 +543,21 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":haze:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="on-globally-positioned.html"><span class="token function">onGloballyPositioned</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">coordinates<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/layout/LayoutCoordinates.html">LayoutCoordinates</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-996277538%2FFunctions%2F-1073587601" anchor-label="onLayoutDirectionChange" id="-996277538%2FFunctions%2F-1073587601" data-filterable-set=":haze:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":haze:dokkaHtmlPartial/commonMain" data-filterable-set=":haze:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-haze-source-node/index.html#-996277538%2FFunctions%2F-1073587601"><span>on</span><wbr><span>Layout</span><wbr><span>Direction</span><wbr><span><span>Change</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-996277538%2FFunctions%2F-1073587601"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":haze:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-haze-source-node/index.html#-996277538%2FFunctions%2F-1073587601"><span class="token function">onLayoutDirectionChange</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
